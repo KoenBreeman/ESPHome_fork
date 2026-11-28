@@ -379,7 +379,6 @@ void DMXComponent::loop() {
   }
   if (this->mode_ == DMXMode::DMX_MODE_TX && this->tx_enabled_) {
     if (this->tx_dirty_ || (now - this->last_tx_ms_ >= this->tx_interval_ms_)) {
-
       ESP_LOGI(TAG, "TX: calling send_universe_()");
       this->send_universe_();
       ESP_LOGI(TAG, "TX: send_universe_() returned");
